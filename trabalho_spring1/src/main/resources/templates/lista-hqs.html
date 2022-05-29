@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Teste</title>
+</head>
+<body>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Codigo</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Autor</th>
+				<th scope="col">Data de Lançamento</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each = "quadrinho: ${listaHQs}">
+				<td th:text="${quadrinho.codigo}"></td>
+				<td th:text="${quadrinho.nome}"></td>
+				<td th:text="${quadrinho.autor}"></td>
+				<td th:text="${quadrinho.dataLancamento}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<form method="get" action="/home">
+	<input type="submit" value="Voltar ao Inicio"/>
+	</form>	
+
+<script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
